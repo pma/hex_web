@@ -19,7 +19,7 @@ defmodule HexWeb.SitemapControllerTest do
 
     assert conn.status == 200
 
-    path          = Path.join([__DIR__, "..", "fixtures"])
+    path          = Path.join([__DIR__, "..", "..", "fixtures"])
     expected_body = File.read!(Path.join(path, "sitemap.xml"))
 
     assert conn.resp_body == expected_body

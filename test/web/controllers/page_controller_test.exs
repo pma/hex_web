@@ -37,7 +37,7 @@ defmodule HexWeb.PageControllerTest do
   end
 
   test "index" do
-    path     = Path.join([__DIR__, "..", "fixtures"])
+    path     = Path.join([__DIR__, "..", "..", "fixtures"])
     logfile1 = File.read!(Path.join(path, "s3_logs_1.txt"))
     logfile2 = File.read!(Path.join(path, "s3_logs_2.txt"))
 
