@@ -13,7 +13,7 @@ config :hex_web, HexWeb.Endpoint,
   cache_static_lookup: false,
   check_origin: false,
   watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin",
-             cd: Path.expand("..", __DIR__)]]
+             cd: Path.expand("../assets", __DIR__)]]
 
 config :hex_web, HexWeb.Endpoint,
   live_reload: [
