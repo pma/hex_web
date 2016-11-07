@@ -1,7 +1,6 @@
 .package-title {
   color: #714a94;
   @include font-size(50 , $base-line-height);
-  font-weight: 300;
   padding: 20px 0 0 0;
 
   word-wrap: break-word;
@@ -12,8 +11,12 @@
 
   .version {
     color: #969da1;
-    @include font-size(20 , $base-line-height);
+    @include font-size(25 , $base-line-height);
     padding: 0 0 0 4px;
+
+    &.retired {
+      color: $color-red;
+    }
   }
 }
 
@@ -38,9 +41,6 @@
   padding: 0;
   li {
     margin-bottom: 5px;
-    a {
-      color: #c65252;
-    }
   }
 }
 
@@ -59,7 +59,7 @@
     background: #c65252;
   }
   &.make {
-    background: #5c676d;
+    background: $color-text-grey;
   }
 }
 
@@ -158,10 +158,8 @@
   padding-top: 0;
 }
 
-.retirement-icon {
-  width: 10px;
-  position: absolute;
-  top: -1px;
-  left: -11px;
-  fill: #a94442;
+.version-retirement {
+  &, &:hover, &:focus {
+    color: $color-red;
+  }
 }

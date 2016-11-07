@@ -128,16 +128,10 @@
     }
     p {
       @include font-size(16 , 40);
-      .code {
+      code {
+        font-family: $base-font-family;
         font-weight: bold;
-        color: #714a94;
-        background: #f8f3fc;
         display: inline-block;
-        padding: 0 4px;
-        border-radius: 4px;
-      }
-      a {
-        color: #ec485b;
       }
     }
   }
@@ -239,7 +233,6 @@
     padding: 0;
     li {
       a {
-        color: #ec485b;
         font-size: 18px;
         line-height: 18px;
       }

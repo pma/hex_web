@@ -2,7 +2,7 @@
   @include font-size(38 , $base-line-height);
   font-weight: 300;
   margin: 40px 0;
-  color: #5c676d;
+  color: $color-text-grey;
 }
 
 .letter-sort > .list {
@@ -26,12 +26,12 @@
   }
 
   > li > a {
-    color: $text-grey;
+    color: $color-text-grey;
     font-weight: 300;
   }
 
   > li > a:hover {
-    color: $color-red;
+    color: $color-link;
   }
 }
 
@@ -57,17 +57,17 @@
     li {
       padding: 18px 18px;
       &:nth-child(even) {
-        background: #f4f4f4;
+        background: $color-light-grey;
       }
       a {
-        color: #aa2c3f;
+        color: $color-link;
         @include font-size(26 , $base-line-height);
         line-height: 25px;
         word-wrap: break-word;
       }
       .version {
         @include font-size(18 , $base-line-height);
-        color: #5c676d;
+        color: $color-text-grey;
         font-weight: 300;
       }
       p {
@@ -79,12 +79,12 @@
       }
       .downloads-info {
         float: right;
-        color: #5c676d;
+        color: $color-text-grey;
         font-weight: 300;
         @include font-size(18 , $base-line-height);
         text-align: right;
         .download-count {
-          color: #5c676d;
+          color: $color-text-grey;
           font-weight: bold;
           display: inline-block;
           padding: 0 0 10px 0;
@@ -101,7 +101,7 @@
 .pagination-info,
 .pagination-sort {
   float: left;
-  color: $text-grey;
+  color: $color-text-grey;
   @include font-size(16, $base-line-height);
   padding: 10px;
   font-weight: 300;
@@ -127,7 +127,7 @@
     a, span,
     a:hover, span:hover,
     a:focus, span:focus {
-      color: $color-red;
+      color: $color-link;
     }
   }
 
@@ -135,8 +135,8 @@
     a, span,
     a:hover, span:hover,
     a:focus, span:focus {
-      background-color: $color-red;
-      border-color: $color-red;
+      background-color: $color-link;
+      border-color: $color-link;
     }
   }
 

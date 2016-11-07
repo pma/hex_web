@@ -1,4 +1,5 @@
 <%
+IO.inspect @package.meta
 description = @package.meta.description
 maintains = @package.meta.maintainers || []
 licenses = @package.meta.licenses || []
@@ -18,17 +19,20 @@ compatible_tools = Enum.flat_map(build_tools, &(Map.get(tool_compatibility, &1, 
                    |> Enum.uniq
 
 tools = Keyword.take(tools, compatible_tools)
-
 %>
 
-<h2 class="package-title"><a href="<%= package_path(Endpoint, :show, @package) %>"><%= @package.name %></a>
- <%= if @current_release do %>
-  <span class="version"><%= @current_release.version %></span>
+<h2 class="package-title"><%= @package.name %>
+  <%= if @current_release do %>
+    <%= if retirement = @current_release.retirement do %>
+      <span class="version retired"><%= @current_release.version %> (retired)</span>
+    <% else %>
+      <span class="version"><%= @current_release.version %></span>
+    <% end %>
   <% end %>
 </h2>
 
-<%= if retirement = @current_release.retirement do %>
-  <div class="alert alert-danger" role="alert">
+<%= if retirement = @current_release && @current_release.retirement do %>
+  <div class="alert alert-danger" style="margin-top: 40px" role="alert">
     <%= retirement_html(retirement) %>
   </div>
 <% end %>
@@ -49,7 +53,7 @@ tools = Keyword.take(tools, compatible_tools)
     <%= if links != [] || (@hexdocs_url && @docs_tarball_url) do %>
       <h3>Links</h3>
       <ul class="links">
-        <%= for { name, link } <- links do %>
+        <%= for {name, link} <- links do %>
         <li><a href="<%= link %>" rel="nofollow"><%= name %></a></li>
         <% end %>
         <%= if @hexdocs_url && @docs_tarball_url do %>
