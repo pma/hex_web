@@ -294,8 +294,7 @@ revert releases and even remove other package owners.</p>
 owner.</p>
 <pre><code>mix hex.owner add PACKAGE EMAIL</code></pre>
 <h4>Remove owner</h4>
-<p>Removes an owner to package by specifying the package name and email of the new
-owner.</p>
+<p>Removes an owner of a given package by specifying the package name and the email of the owner to be removed.</p>
 <pre><code>mix hex.owner remove PACKAGE EMAIL</code></pre>
 <h4>List owners</h4>
 <p>Lists all owners of given package.</p>
